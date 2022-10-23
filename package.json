@@ -1,0 +1,46 @@
+{
+  "name": "bundle-info-webpack-plugin",
+  "version": "1.0.2",
+  "description": "write a file with some bundle info in your dist folder when you package your application",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "rollup -w -c",
+    "build:types": "tsc -b ./tsconfig.json",
+    "build": "npm run build:types && rollup -c",
+    "prepublish": "pnpm version && pnpm build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangchaochuan/bundle-info-webpack-plugin.git"
+  },
+  "keywords": [
+    "bundle-info",
+    "webpack-plugin",
+    "version-info"
+  ],
+  "author": "wangchaochuan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wangchaochuan/bundle-info-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/wangchaochuan/bundle-info-webpack-plugin#readme",
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^9.0.2",
+    "rollup": "^3.2.3",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "shelljs": "^0.8.5",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.3"
+  }
+}
